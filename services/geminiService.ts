@@ -13,16 +13,11 @@ export const generateCoverImage = async (settings: CoverSettings): Promise<strin
       numberOfImages: number;
       outputMimeType: 'image/png';
       aspectRatio: CoverSettings['aspectRatio'];
-      negativePrompt?: string;
     } = {
       numberOfImages: 1,
       outputMimeType: 'image/png',
       aspectRatio: settings.aspectRatio,
     };
-
-    if (settings.negativePrompt?.trim()) {
-      config.negativePrompt = settings.negativePrompt;
-    }
 
     const response = await ai.models.generateImages({
         model: 'imagen-4.0-generate-001',

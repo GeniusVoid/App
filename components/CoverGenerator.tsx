@@ -8,7 +8,6 @@ import { ImageDisplay } from './ImageDisplay';
 export const CoverGenerator: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [settings, setSettings] = useState<CoverSettings>({
     prompt: '',
-    negativePrompt: 'bad limbs, unattached limbs, ugly, disfigured, blurry',
     aspectRatio: '3:4',
     style: 'Anime/Manga',
   });
@@ -55,14 +54,6 @@ export const CoverGenerator: React.FC<{ onBack: () => void }> = ({ onBack }) => 
                 'A futuristic city with flying cars and holographic billboards at night',
                 'Two lovers embracing under a sky filled with two moons and swirling nebulae',
             ]}
-          />
-          <AnimatedPlaceholderInput
-            label="Negative Prompt"
-            name="negativePrompt"
-            value={settings.negativePrompt}
-            onChange={handleChange}
-            isTextarea={true}
-            placeholders={['']}
           />
             <div>
               <label htmlFor="style" className="block text-sm font-medium text-brand-text-secondary mb-2">Art Style</label>
